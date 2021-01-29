@@ -85,4 +85,17 @@ async function createComments() {
   console.log(res);
 }
 
-createComments();
+// createComments();
+
+/*-------------Create Email Sub Table-------------*/
+async function createEmail() {
+  let res = await query(
+    `CREATE TABLE emails(
+            sub BOOL,
+            uid INTEGER
+        )`
+  );
+  console.log(res);
+}
+
+createEmail();

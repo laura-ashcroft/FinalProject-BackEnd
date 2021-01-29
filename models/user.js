@@ -12,7 +12,8 @@ async function createUser(value) {
   const res = query(
     `
     INSERT INTO users (admin, name, surname, email, profileImage, cohort, currentRole, currentEmployer, skills, introduction, social)
-    VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+      VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+    RETURNING *
     `,
     [
       value.admin,
@@ -34,11 +35,13 @@ async function createUser(value) {
 /*-----------GET: Get all Users------------*/
 async function getAllUsers() {
   const res = await query(
-    `SELECT * FROM users ORDER BY cohort ASC, surname ASC`
+    `SELECT * FROM users 
+        LEFT JOIN emails
+          ON emails.uid = users.id
+      ORDER BY cohort ASC, surname ASC`
   );
   return res.rows;
 }
-
 /*-----------GET: Users by Email Address------------*/
 async function getUserByEmail(email) {
   console.log("this is value in items.js: ", email);

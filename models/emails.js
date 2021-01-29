@@ -3,6 +3,7 @@ const { query } = require("../db/index");
 /*-----------------------Comment-----------------------*/
 /*-----------POST: Email Sub------------*/
 async function subEmail(value) {
+  console.log("this is value in emails: ", value);
   const res = await query(
     `
     INSERT INTO emails(

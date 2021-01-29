@@ -45,14 +45,21 @@ async function getAllUsers() {
 /*-----------GET: Users by Email Address------------*/
 async function getUserByEmail(email) {
   console.log("this is value in items.js: ", email);
-  const res = await query(`SELECT * FROM users WHERE email = $1`, [email]);
+  const res = await query(
+    `SELECT * FROM users LEFT JOIN emails
+  ON emails.uid = users.id WHERE users.email = $1`,
+    [email]
+  );
   return res.rows;
 }
-
 /*-----------GET: Users by ID------------*/
 async function getUserByID(id) {
   console.log("this is value in items.js: ", id);
-  const res = await query(`SELECT * FROM users WHERE id = $1`, [id]);
+  const res = await query(
+    `SELECT * FROM users LEFT JOIN emails
+  ON emails.uid = users.id WHERE users.id = $1`,
+    [id]
+  );
   return res.rows;
 }
 // /*-----------PATCH: Users Patch------------*/

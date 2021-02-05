@@ -1,6 +1,26 @@
-# back-end-final-project-the-falcon-5ive
+# SoCietly
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Community app for School of Code alumni
+
+### Keeping all bootcampers connected after the School of Code
+
+_December 2020 - January 2021 - 4 week project_
+
+<img src="./Images/landingpage.png" alt="SoCietly Landing Page"/>
+<img src="./Images/homepage.png" alt="SoCietly Homepage"/>
+<img src="./Images/profile.png" alt="SoCietly Profile"/>
+<img src="./Images/editprofile.png" alt="SoCietly Edit Profile"/>
+
+### The project brief
+
+_"How can we better keep track of ex-bootcampers after the course?"_
+
+We broke this down into a series of epics to monitor our progress as we worked on the problem. We wanted to focus two main sections:
+
+- Career - The first job an alumnus has and their career trajectory as they advance on this new path.
+- Contact - How School of Code staff can manage their contact with alumni, including creating events to grow the community.
+
+This project was initalised with NPX Express Generator
 
 ## Available Scripts
 
